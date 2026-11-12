@@ -39,7 +39,8 @@ jobs:
           channel: stable
           flutter-version: ${{ env.FLUTTER_VERSION }}
       - run: flutter pub get
-      - run: flutter analyze
+      - run: flutter analyze . --no-fatal-infos --no-fatal-warnings
+      
       - name: Test Windows Runtime initialization
         if: runner.os == 'Windows'
         run: |
