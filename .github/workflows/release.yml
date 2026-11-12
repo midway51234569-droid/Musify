@@ -53,7 +53,7 @@ jobs:
           flutter-version: "${{ env.FLUTTER_VERSION }}"
 
       #
-      - run: |
+      - run:    - run: flutter analyze . --no-fatal-infos --no-fatal-warnings || true
           echo keyPassword=\${{ secrets.KEY_STORE }} > ${{env.PROPERTIES_PATH}}
           echo storePassword=\${{ secrets.KEY_PASSWORD }} >> ${{env.PROPERTIES_PATH}}
           echo keyAlias=\${{ secrets.KEY_ALIAS }} >> ${{env.PROPERTIES_PATH}}
